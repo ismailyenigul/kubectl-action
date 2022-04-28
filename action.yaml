@@ -16,10 +16,10 @@ runs:
   using: composite
   steps:
   - name: Configure kubectl CLI
-    run: setup-kubectl.sh
+    run: ./setup-kubectl.sh
     shell: bash
   - name: Authorize kubectl to the cluster
-    run: login-kubectl.sh
+    run: ./login-kubectl.sh
     shell: bash
     env:
       BASE64_KUBE_CONFIG: ${{ inputs.base64-kube-config }}
