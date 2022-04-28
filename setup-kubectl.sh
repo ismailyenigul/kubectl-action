@@ -5,5 +5,6 @@ curl -LO "https://dl.k8s.io/${{ inputs.kubectl-version }}/bin/linux/amd64/kubect
 echo "$(cat kubectl.sha256)  kubectl" | sha256sum --check
 
 mkdir $GITHUB_WORKSPACE/bin
+chmod 755 kubectl
 mv kubectl $GITHUB_WORKSPACE/bin
 echo "$GITHUB_WORKSPACE/bin" >> $GITHUB_PATH
